@@ -1,0 +1,17 @@
+import { getCookie, deleteCookie } from '../utils/cookie';
+
+const PROJECT_HIVE_TOKEN = 'Poject-Hive-Token';
+const initialState = getCookie('Project-Hive-Token');
+
+export default (state = initialState, { type, payload }) => {
+  switch (type) {
+    case 'TOKEN_SET':
+      return payload;
+    case 'TOKEN_REMOVE':
+      // return initialState;
+      deleteCookie(PROJECT_HIVE_TOKEN);
+      return null;
+    default:
+      return state;
+  }
+};
