@@ -27,20 +27,22 @@ class Landing extends React.Component {
 
     render() {
         const rootJSX = <div>
-            <h2> Welcome to Project Hive!</h2>
+            <Link to='/'><h2>Welcome to Project Hive!</h2></Link>
             <Link to='/signup'>Sign up for Project Hive</Link>
             <Link to='/login'>Login to Project Hive</Link>
         </div>;
 
         const signUpJSX = <div>
-            <h2> SignUp for Project Hive</h2>
+            <Link to='/'><h2>Project Hive</h2></Link>
+            <h3>Signup</h3>
             <AuthForm type='signup' onComplete={this.handleSignup}/>
             <p> Already have an account? </p>
             <Link to='/login'> Login to Project Hive</Link>
         </div>;
 
         const loginJSX = <div>
-            <h2> Login to Project Hive</h2>
+            <Link to='/'><h2>Project Hive</h2></Link>
+            <h3>Login</h3>
             <AuthForm type='login' onComplete={this.handleLogin}/>
             <p> Do not have an account? </p>
             <Link to='/signup'>Sign up for Project Hive</Link>

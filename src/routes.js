@@ -6,3 +6,4 @@ export const LOGIN = '/login';
 export const ROOT = '/';
 export const DASHBOARD = '/dashboard';
 export const SIGNUP_FRONTEND = '/signup';
+export const ALARM_CONTROLS = '/alarmcontrols';

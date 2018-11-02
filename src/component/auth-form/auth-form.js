@@ -30,12 +30,23 @@ class AuthForm extends React.Component {
         let { type } = this.props;
         type = type === 'login' ? 'login' : 'signup';
 
-        const signupJSX =
+        const signupJSXEmail =
             <input
                 name='email'
                 placeholder='email'
                 type='email'
                 value={this.state.email}
+                onChange={this.handleChange}
+            />;
+
+        const signupJSXAccessCode =
+            <input
+                name='accesscode'
+                placeholder='access code'
+                type='number'
+                maxLength='4'
+                minLength='4'
+                value={this.state.accessCode}
                 onChange={this.handleChange}
             />;
 
@@ -48,7 +59,8 @@ class AuthForm extends React.Component {
                     value={this.state.username}
                     onChange={this.handleChange}
                 />
-                { type !== 'login' ? signupJSX : undefined }
+                { type !== 'login' ? signupJSXEmail : undefined }
+                { type !== 'login' ? signupJSXAccessCode : undefined }
                 <input
                     name='password'
                     placeholder='sekret'
