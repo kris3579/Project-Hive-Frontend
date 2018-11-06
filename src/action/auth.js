@@ -9,11 +9,12 @@ export const set = token => ({
 export const remove = () => ({
   type: 'TOKEN_REMOVE',
 });
+
 export const signupRequest = user => (store) => {
   console.log(`${API_URL}${routes.SIGNUP_BACKEND}, ${user}`);
     return superagent.post(`${API_URL}${routes.SIGNUP_BACKEND}`) // eslint-disable-line
     .send(user)
-  // .withCredentials()
+    // .withCredentials()
     .then((response) => {
       return store.dispatch(set(response.text));
     });
@@ -27,3 +28,4 @@ export const loginRequest = user => (store) => {
       return store.dispatch(set(response.text));
     });
 };
+

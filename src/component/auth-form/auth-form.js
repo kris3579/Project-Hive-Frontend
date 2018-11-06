@@ -6,6 +6,7 @@ const emptyState = {
     username: '',
     email: '',
     password: '',
+    accessCode: '',
 };
 
 
